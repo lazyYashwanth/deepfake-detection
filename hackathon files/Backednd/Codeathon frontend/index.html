@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deepfake Digital Evidence Verifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app-container">
+        <div id="status-indicator" class="status-offline" title="Indicates the real-time status of our AI analysis service">
+            <span class="status-dot"></span>
+            <span class="status-text">Checking...</span>
+        </div>
+        
+        <h1>Deepfake Digital Evidence Verifier</h1>
+        <p>Upload a video to verify its authenticity.</p>
+        
+        <input type="file" id="videoUpload" accept="video/mp4,video/mov,video/avi,video/webm,video/mkv" aria-label="Select video file for deepfake analysis" tabindex="1">
+        <p class="instruction-text">For best results, use a short video clip (< 1 minute) containing a clear view of a person's face.</p>
+        <div id="fileValidationMessage" class="validation-message hidden" role="alert" aria-live="polite"></div>
+        <button id="submitBtn" title="Start AI analysis of the selected video" tabindex="2">Analyze Video</button>
+        
+        <div id="resultsContainer">
+            <!-- Welcome State for Demo Impact -->
+            <div id="welcomeCard" class="demo-card">
+                <h2>✨ Demo Ready - See AI in Action</h2>
+                <div class="demo-preview">
+                    <div class="demo-video-placeholder">
+                        <div class="demo-video-icon">🎬</div>
+                        <p>Sample Analysis</p>
+                    </div>
+                </div>
+                <div class="verdict-fake demo-verdict">MANIPULATION LIKELY</div>
+                <div class="demo-info">
+                    <p>Confidence Score: <span class="demo-confidence">87.34%</span></p>
+                    <p>Details: <span class="demo-details">Video is 87.34% likely to be a FAKE.</span></p>
+                </div>
+                <div class="demo-faces-section">
+                    <h3 title="These are the actual face crops our AI analyzed to determine the verdict">Faces Analyzed</h3>
+                    <div class="demo-faces-gallery">
+                        <div class="demo-face-placeholder" title="Example analyzed face 1">👤</div>
+                        <div class="demo-face-placeholder" title="Example analyzed face 2">👤</div>
+                        <div class="demo-face-placeholder" title="Example analyzed face 3">👤</div>
+                    </div>
+                </div>
+                <div class="demo-cta">
+                    <p><strong>Ready to analyze your own video? Select a file above to begin.</strong></p>
+                </div>
+            </div>
+            
+            <!-- Actual Results Card -->
+            <div id="resultsCard" class="hidden" aria-live="polite" role="region" aria-label="Analysis results">
+                <h2>Analysis Report</h2>
+                <div id="videoPreviewContainer"></div>
+                <div id="verdictContainer"></div>
+                <div>
+                    <p>Confidence Score: <span id="confidenceScore"></span></p>
+                </div>
+                <div>
+                    <p>Details: <span id="detailsText"></span></p>
+                </div>
+                <div id="analyzedFacesSection" class="hidden">
+                    <h3 title="These are the actual face crops our AI analyzed to determine the verdict">Faces Analyzed</h3>
+                    <div id="facesGallery"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js" defer></script>
+</body>
+</html>
