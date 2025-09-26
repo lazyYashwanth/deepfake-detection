@@ -1,0 +1,10 @@
+Flask==2.3.3
+Werkzeug==2.3.7
+requests==2.31.0
+torch==2.0.1
+torchvision==0.15.2
+facenet-pytorch==2.5.3
+efficientnet-pytorch==0.7.1
+opencv-python-headless==4.9.0.80
+numpy==1.26.4
+Pillow==10.0.0

@@ -1,0 +1,14 @@
+# Model Weights Information
+# 
+# This file should contain the trained EfficientNet-B0 model weights.
+# File name: efficientnet_b0_epoch_15_loss_0.158.pth
+#
+# If this file is not present, the application will fall back to 
+# ImageNet-pretrained EfficientNet weights automatically.
+#
+# To add your custom weights:
+# 1. Place the .pth file in this directory
+# 2. Ensure it's named: efficientnet_b0_epoch_15_loss_0.158.pth
+# 3. The app will automatically detect and load it
+
+# Note: This is a placeholder file - replace with actual .pth model weights
